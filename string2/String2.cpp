@@ -98,7 +98,7 @@ int main() {
     String s2 = s1;
     cout << s2 << endl;
     
-    String s3 = "student";
+    String s3 = "student ";
     s3 = s1;
     cout << s3 << endl;
     
