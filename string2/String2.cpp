@@ -73,7 +73,7 @@ public:
     ~String() { delete mgr; }
     String(const String& s)
     {
-        *mgr = *s.mgr;
+        mgr = new StringManager(*s.mgr);
     }
     String& operator=(const String& s)
     {
