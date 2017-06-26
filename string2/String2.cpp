@@ -62,6 +62,7 @@ ostream& operator<<(ostream& os, const StringManager& s)
     return os;
 }
 
+/*
 class String {
     StringManager* mgr;
 public:
@@ -83,10 +84,38 @@ public:
     
     friend ostream& operator<<(ostream& os, const String& s);
 };
+ 
 
 ostream& operator<<(ostream& os, const String& s)
 {
     os << *(s.mgr);
+    return os;
+}
+*/
+
+class String {
+    StringManager mgr;
+public:
+    String():String(""){}
+    String(const char* s) : mgr(s)
+    {
+    }
+    String(const String& s) : mgr(s.mgr)
+    {
+    }
+    String& operator=(const String& s)
+    {
+        mgr = s.mgr;
+        return *this;
+    }
+    
+    friend ostream& operator<<(ostream& os, const String& s);
+};
+
+
+ostream& operator<<(ostream& os, const String& s)
+{
+    os << s.mgr;
     return os;
 }
 
